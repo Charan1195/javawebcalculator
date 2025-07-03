@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javawebcal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: javawebcal
+  template:
+    metadata:
+      labels:
+        app: javawebcal
+    spec:
+      containers:
+      - name: javawebcal
+        image: charan1306/webapp:v1
+        ports:
+        - containerPort: 8080
